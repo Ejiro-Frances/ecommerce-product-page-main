@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+ <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="header grid grid--2-cols">
+    <div class="header-col flex flex--between">
+       <a href="#">
+      <img src="./images/logo.svg" alt="Logo"></a>
+      <nav class="main-nav-bar">
+        <ul class="main-nav-links flex flex--center">
+          <li><a class="main-nav-link" href="#">Collections</a></li>
+          <li><a class="main-nav-link" href="#">Men</a></li>
+          <li><a class="main-nav-link" href="#">Women</a></li>
+          <li><a class="main-nav-link" href="#">About</a></li>
+          <li><a class="main-nav-link" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+   
+    <div class="header-col flex avatar-n-cart">
+      <img src="./images/icon-cart.svg" alt="A shopping cart icon">
+      <img class="avatar" src="./images/image-avatar.png" alt=" An image of a man's face">
+    </div>
+  </header>
+  <main class="main">
+    <article class="container grid grid--2-cols">
+      <section class="product-container">
+        <div class="product-img-box">
+          <img class="product-img img-1" src="./images/image-product-1.jpg" alt="A pair of brown and white colored sneakers">
+        </div>
+
+        <div class="thumbnail-holder grid grid--4-cols">
+          <img class="product-img" src="./images/image-product-1-thumbnail.jpg" alt="A pair of brown and white colored sneakers">
+          <img class="product-img" src="./images/image-product-2-thumbnail.jpg" alt="A pair of brown and white colored sneakers placed on two stones and a stick by the side">
+          <img class="product-img" src="./images/image-product-3-thumbnail.jpg" alt="The right pair of brown and white colored sneakers placed on two stones">
+          <img class="product-img" src="./images/image-product-4-thumbnail.jpg" alt="The left pair of brown and white colored sneakers placed on two stones">
+        </div>
+      </section>
+      
+      <section class="description-container flex flex--center">
+        <p class="title">Sneaker Company</p>
+        <h1 class="edition-title">Fall Limited Edition Sneakers</h1>
+        <p class="product-description">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        <div class="price">
+          <p class="current-price">$125.00</p>
+          <span class="discount">50%</span>
+          <p class="old-price">  $250.00</p>
+        </div>
+
+        <aside class="cart-box">
+          <div>
+            <button class=""><img src="./images/icon-minus.svg" alt="minus icon"></button>
+            <span class="quantity">0</span>
+            <button class=""><img src="./images/icon-plus.svg" alt="plus icon"></button>
+          </div>
+          <button>
+            <img src="./images/icon-cart.svg" alt="cart">
+            <span class="add-to-cart">Add to cart</span>
+          </button>
+        </aside>
+      </section>
+    </article>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.x.com/france_ssa">Ejiro Frances</a>.
+  </footer>
+  <script src="./js/script.js"></script>
+</body>
+</html>

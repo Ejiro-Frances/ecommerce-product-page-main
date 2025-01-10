@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Bokor&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumbh+Sans:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap");
+
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --pale-orange: hsl(25, 100%, 94%);
+
+  /* Neutral */
+
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black-75: hsl(0, 0%, 0%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+a:link,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  display: block;
+}
+input,
+button {
+  border: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+body {
+  font-family: "Kumbh Sans", serif;
+  font-family: normal;
+  background: var(--white);
+
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+/* ************************************** */
+/* RE-USEABLE STYLES */
+/* ************************************** */
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+.flex--between {
+  justify-content: space-between;
+}
+.flex--center {
+  justify-content: center;
+}
+.grid {
+  display: grid;
+  gap: 2.4rem;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+/* ************************************** */
+/* HEADER SECTION */
+/* ************************************** */
+
+.header {
+  padding: 2rem 1rem;
+  box-shadow: 0 0 0 2rem rgba(255, 255, 255, 0.8);
+}
+/* .header-left-col {
+  display: flex;
+  justify-content: space-between;
+} */
+.avatar-n-cart {
+  border: 1px solid green;
+  width: 20rem;
+}
+.avatar {
+  width: 20%;
+  height: 20%;
+}
+/* ************************************** */
+/* NAVIGATION */
+/* ************************************** */
+.main-nav-link:link,
+.main-nav-link:visited {
+  font-size: 1.6rem;
+  color: var(--dark-grayish-blue);
+}
+
+/* ************************************** */
+/* MAIN SECTION */
+/* ************************************** */
+.container {
+  align-content: center;
+  border: 1px solid green;
+}
+
+/* ************************************** */
+/*PRODUCT IMAGE SECTION */
+/* ************************************** */
+.product-img-box {
+  max-width: 80%;
+  max-height: 60%;
+  margin: 0 auto;
+}
+.product-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+.thumbnail-holder {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+/* ************************************** */
+/* PRODUCT TEXT SECTION */
+/* ************************************** */
+.description-container {
+  flex-direction: column;
+}
+.title {
+  text-transform: uppercase;
+}
+
+.edition-title {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 1.8;
+}
+.product-description {
+  padding: 2rem 0 1rem;
+  color: var(--light-grayish-blue);
+}
+/* ************************************** */
+/* FOOTER SECTION */
+/* ************************************** */
+
+/* . */
+/* ************************************** */
+/* ATTRIBUTION */
+/* ************************************** */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

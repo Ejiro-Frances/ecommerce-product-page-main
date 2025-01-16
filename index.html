@@ -14,15 +14,28 @@
     <title>Frontend Mentor | E-commerce product page</title>
 
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__col">
+        <button class="mobile-menu">
+          <img
+            class="hamburger"
+            src="./images/icon-menu.svg"
+            alt="mobile menu"
+          />
+          <img
+            class="close-menu"
+            src="./images/icon-close.svg"
+            alt="mobile menu"
+          />
+        </button>
         <a href="#">
           <img src="./images/logo.svg" alt="Logo" />
         </a>
         <nav class="main-nav">
-          <ul class="main-nav__links flex flex--center">
+          <ul id="mobile-nav-links" class="main-nav__links flex flex--center">
             <li><a class="main-nav__link" href="#">Collections</a></li>
             <li><a class="main-nav__link" href="#">Men</a></li>
             <li><a class="main-nav__link" href="#">Women</a></li>
@@ -52,7 +65,18 @@
       <div id="user-cart-box" class="user-cart">
         <header class="user-cart__header">Cart</header>
         <section class="user-cart__holder">
-          <p>Your cart is empty</p>
+          <p class="empty-cart">Your cart is empty</p>
+          <div class="cart-filled">
+            <div class="img-box">
+              <img src="" alt="" />
+              <div>
+                <p class="prod-name"></p>
+                <p class="prod-cost"></p>
+              </div>
+              <div class="delete-cart"></div>
+            </div>
+          </div>
+          <div class="check-out"></div>
         </section>
       </div>
     </header>
@@ -101,7 +125,9 @@
 
         <section class="container__description">
           <p class="container__description__title">Sneaker Company</p>
-          <h1 class="edition-title">Fall Limited Edition Sneakers</h1>
+          <h1 id="product-name" class="edition-title">
+            Fall Limited Edition Sneakers
+          </h1>
           <p class="product-description">
             These low-profile sneakers are your perfect casual wear companion.
             Featuring a durable rubber outer sole, they’ll withstand everything
@@ -109,20 +135,23 @@
           </p>
           <div class="price">
             <div class="price--l">
-              <p class="price--current">$125.00</p>
+              <p class="price--current">
+                $
+                <span id="product-price">125.00</span>
+              </p>
               <span class="price--discount">50%</span>
             </div>
             <p class="price--old">$250.00</p>
           </div>
 
-          <aside class="container__shopping">
+          <aside class="container__shopping grid grid--2--cols">
             <!-- quantity section -->
             <div class="container__shopping--quantity">
-              <button class="quantity--minus">
+              <button id="quantity-reduce" class="quantity--minus">
                 <img src="./images/icon-minus.svg" alt="minus icon" />
               </button>
-              <span class="quantity">0</span>
-              <button class="quantity--plus">
+              <input type="number" class="quantity" min="1" value="0" />
+              <button id="quantity-increase" class="quantity--plus">
                 <img src="./images/icon-plus.svg" alt="plus icon" />
               </button>
             </div>
@@ -133,17 +162,12 @@
                 src="./images/icon-cart.svg"
                 alt="cart"
               />
-              <span class="add-to-cart">Add to cart</span>
+              <span id="cart-btn" class="add-to-cart">Add to cart</span>
             </button>
           </aside>
         </section>
       </article>
     </main>
-
-    <!-- <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://www.x.com/france_ssa">Ejiro Frances</a>.
-  </footer>  -->
     <script src="./js/script.js"></script>
   </body>
 </html>

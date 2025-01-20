@@ -34,6 +34,8 @@
         <a href="#">
           <img src="./images/logo.svg" alt="Logo" />
         </a>
+        <!-- backdrop -->
+        <div class="backdrop"></div>
         <nav class="main-nav">
           <ul id="mobile-nav-links" class="main-nav__links flex flex--center">
             <li><a class="main-nav__link" href="#">Collections</a></li>
@@ -62,37 +64,64 @@
         </div>
       </div>
       <!-- cart box -->
-      <div id="user-cart-box" class="user-cart">
+      <aside id="user-cart-box" class="user-cart">
         <header class="user-cart__header">Cart</header>
+
         <section class="user-cart__holder">
           <p class="empty-cart">Your cart is empty</p>
-          <div class="cart-filled">
-            <div class="img-box">
-              <img src="" alt="" />
-              <div>
-                <p class="prod-name"></p>
-                <p class="prod-cost"></p>
-              </div>
-              <div class="delete-cart"></div>
-            </div>
-          </div>
-          <div class="check-out"></div>
+
+          <!-- <div id="user-cart-box-img" class="user-cart__product--img"> -->
+          <!-- <img src="./images/image-product-1-thumbnail.jpg" alt="" /> -->
+          <!-- </div> -->
+          <!-- <div> -->
+          <!-- <p class="user-cart__product--name"> -->
+          <!-- Fall Limited Edition Sneakers -->
+          <!-- </p> -->
+          <!-- <p class="user-cart__product--cost"> -->
+          <!-- $125.00 * 3 -->
+          <!-- <strong class="user-cart__product-total"> -->
+          <!-- $375.00 -->
+          <!-- </strong> -->
+          <!-- </p> -->
+          <!-- </div> -->
+          <!-- <div class="user-cart__product--delete"> -->
+          <!-- <img src="./images/icon-delete.svg" alt="delete items button" /> -->
+          <!-- </div> -->
+
+          <!-- <button class="user-cart__product--checkout"> -->
+          <!-- <a href="#">Checkout</a> -->
+          <!-- </button> -->
         </section>
-      </div>
+      </aside>
     </header>
     <main class="main">
       <article class="container grid grid--2--cols">
         <section class="container__product">
           <div class="container__product__img">
             <img
-              class="product-img product-img--1"
+              class="active product-img product-img--1"
               src="./images/image-product-1.jpg"
               alt="A pair of brown and white colored sneakers"
+            />
+            <img
+              class="product-img product-img--1"
+              src="./images/image-product-2.jpg"
+              alt="A pair of brown and white colored sneakers placed on two stones and a stick by the side"
+            />
+            <img
+              class="product-img product-img--1"
+              src="./images/image-product-3.jpg"
+              alt="The right pair of brown and white colored sneakers placed on two stones"
+            />
+            <img
+              class="product-img product-img--1"
+              src="./images/image-product-3.jpg"
+              alt="The left pair of brown and white colored sneakers placed on two stones"
             />
           </div>
 
           <div class="container__product__thumbnail grid grid--4--cols">
-            <div class="product--thumbnail">
+            <div class="product--thumbnail active">
               <img
                 class="product-img"
                 src="./images/image-product-1-thumbnail.jpg"
@@ -122,6 +151,83 @@
             </div>
           </div>
         </section>
+
+        <!-- *******LIGHTBOX START *********-->
+        <section class="lightbox-container">
+          <div class="lightbox">
+            <span class="icon-close">
+              <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                  fill="#69707D"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span class="icon-prev">
+              <img src="./images/icon-previous.svg" alt="previous icon" />
+            </span>
+            <span class="icon-next">
+              <img src="./images/icon-next.svg" alt="next icon" />
+            </span>
+            <div>
+              <div class="container__product__img">
+                <img
+                  class="active product-img product-img--1"
+                  src="./images/image-product-1.jpg"
+                  alt="A pair of brown and white colored sneakers"
+                />
+                <img
+                  class="product-img product-img--1"
+                  src="./images/image-product-2.jpg"
+                  alt="A pair of brown and white colored sneakers placed on two stones and a stick by the side"
+                />
+                <img
+                  class="product-img product-img--1"
+                  src="./images/image-product-3.jpg"
+                  alt="The right pair of brown and white colored sneakers placed on two stones"
+                />
+                <img
+                  class="product-img product-img--1"
+                  src="./images/image-product-3.jpg"
+                  alt="The left pair of brown and white colored sneakers placed on two stones"
+                />
+              </div>
+
+              <div class="container__product__thumbnail grid grid--4--cols">
+                <div class="product--thumbnail active">
+                  <img
+                    class="product-img"
+                    src="./images/image-product-1-thumbnail.jpg"
+                    alt="A pair of brown and white colored sneakers"
+                  />
+                </div>
+                <div class="product--thumbnail">
+                  <img
+                    class="product-img"
+                    src="./images/image-product-2-thumbnail.jpg"
+                    alt="A pair of brown and white colored sneakers placed on two stones and a stick by the side"
+                  />
+                </div>
+                <div class="product--thumbnail">
+                  <img
+                    class="product-img"
+                    src="./images/image-product-3-thumbnail.jpg"
+                    alt="The right pair of brown and white colored sneakers placed on two stones"
+                  />
+                </div>
+                <div class="product--thumbnail">
+                  <img
+                    class="product-img"
+                    src="./images/image-product-4-thumbnail.jpg"
+                    alt="The left pair of brown and white colored sneakers placed on two stones"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- *******LIGHTBOX END *********-->
 
         <section class="container__description">
           <p class="container__description__title">Sneaker Company</p>

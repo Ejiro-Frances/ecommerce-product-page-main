@@ -48,12 +48,13 @@
       </div>
 
       <div class="header__col header--avatar-container">
-        <div id="header--cart">
+        <div id="header--cart" class="cart-icon">
           <img
             class=""
             src="./images/icon-cart.svg"
             alt="A shopping cart icon"
           />
+          <p class="cart-count">0</p>
         </div>
         <div class="avatar--box">
           <img
@@ -65,38 +66,17 @@
       </div>
       <!-- cart box -->
       <aside id="user-cart-box" class="user-cart">
-        <header class="user-cart__header">Cart</header>
+        <div class="user-cart__header">Cart</div>
 
-        <section class="user-cart__holder">
-          <p class="empty-cart">Your cart is empty</p>
-
-          <!-- <div id="user-cart-box-img" class="user-cart__product--img"> -->
-          <!-- <img src="./images/image-product-1-thumbnail.jpg" alt="" /> -->
-          <!-- </div> -->
-          <!-- <div> -->
-          <!-- <p class="user-cart__product--name"> -->
-          <!-- Fall Limited Edition Sneakers -->
-          <!-- </p> -->
-          <!-- <p class="user-cart__product--cost"> -->
-          <!-- $125.00 * 3 -->
-          <!-- <strong class="user-cart__product-total"> -->
-          <!-- $375.00 -->
-          <!-- </strong> -->
-          <!-- </p> -->
-          <!-- </div> -->
-          <!-- <div class="user-cart__product--delete"> -->
-          <!-- <img src="./images/icon-delete.svg" alt="delete items button" /> -->
-          <!-- </div> -->
-
-          <!-- <button class="user-cart__product--checkout"> -->
-          <!-- <a href="#">Checkout</a> -->
-          <!-- </button> -->
+        <section class="user-cart__holder empty">
+          <p class="empty-cart-p">Your cart is empty</p>
         </section>
+        <button class="checkout empty">Checkout</button>
       </aside>
     </header>
     <main class="main">
       <article class="container grid grid--2--cols">
-        <section class="container__product">
+        <div class="container__product default-gallery">
           <div class="container__product__img">
             <img
               class="active product-img product-img--1"
@@ -115,7 +95,7 @@
             />
             <img
               class="product-img product-img--1"
-              src="./images/image-product-3.jpg"
+              src="./images/image-product-4.jpg"
               alt="The left pair of brown and white colored sneakers placed on two stones"
             />
           </div>
@@ -150,10 +130,10 @@
               />
             </div>
           </div>
-        </section>
+        </div>
 
         <!-- *******LIGHTBOX START *********-->
-        <section class="lightbox-container">
+        <div class="lightbox-container">
           <div class="lightbox">
             <span class="icon-close">
               <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -189,7 +169,7 @@
                 />
                 <img
                   class="product-img product-img--1"
-                  src="./images/image-product-3.jpg"
+                  src="./images/image-product-4.jpg"
                   alt="The left pair of brown and white colored sneakers placed on two stones"
                 />
               </div>
@@ -226,7 +206,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
         <!-- *******LIGHTBOX END *********-->
 
         <section class="container__description">
@@ -243,7 +223,7 @@
             <div class="price--l">
               <p class="price--current">
                 $
-                <span id="product-price">125.00</span>
+                <span id="current-price">125.00</span>
               </p>
               <span class="price--discount">50%</span>
             </div>
@@ -262,13 +242,13 @@
               </button>
             </div>
             <!-- add to cart button -->
-            <button class="container__shopping--cart">
+            <button id="cart-btn" class="container__shopping--cart">
               <img
                 class="product--cart"
                 src="./images/icon-cart.svg"
                 alt="cart"
               />
-              <span id="cart-btn" class="add-to-cart">Add to cart</span>
+              <span class="add-to-cart">Add to cart</span>
             </button>
           </aside>
         </section>

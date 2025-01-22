@@ -9,35 +9,11 @@ const cartButton = document.querySelector("#cart-btn");
 const cartCount = document.querySelector(".cart-count");
 const cartContainer = document.querySelector(".user-cart__holder");
 const checkout = document.querySelector(".checkout");
+// const addToCartBtn = document.querySelector(".add-to-cart");
 
 const addQuantityEl = document.querySelector("#quantity-increase");
 const minusQuantityEl = document.querySelector("#quantity-reduce");
 const quantityInputEl = document.querySelector(".quantity");
-
-// gallery documents
-// const mainImages = document.querySelectorAll(".container__product__img img");
-const mainImages = document.querySelectorAll(".default-gallery .product-img");
-// const lightboxMainImages = document.querySelectorAll(".lightbox .container__product__img img");
-const lightboxMainImages = document.querySelectorAll(".lightbox .product-img");
-// const thumbnails = document.querySelectorAll(
-//   ".container__product__thumbnail .product--thumbnail"
-// );
-// const lightboxThumbnails = document.querySelectorAll(
-//   ".lightbox .container__product__thumbnail .product--thumbnail"
-// );
-
-const thumbnails = document.querySelectorAll(
-  ".default-gallery .product--thumbnail .product-img"
-);
-const lightboxThumbnails = document.querySelectorAll(
-  ".lightbox .product--thumbnail .product-img"
-);
-
-const lightbox = document.querySelector(".lightbox");
-const lightboxContainer = document.querySelector(".lightbox-container");
-const closeLightBox = document.querySelector(".icon-close");
-const iconPrev = document.querySelector(".icon-prev");
-const iconNext = document.querySelector(".icon-next");
 
 // toggle mobile menu
 mobileMenu.addEventListener("click", () => {
@@ -49,7 +25,10 @@ mobileMenu.addEventListener("click", () => {
 headerCart.addEventListener("click", () => {
   userCartBox.classList.toggle("user-cart--active");
 });
-
+cartCount.addEventListener("click", () => {
+  userCartBox.classList.toggle("user-cart--active");
+});
+// ***************************
 // CART SECTION
 let count = 0;
 let totalQty = 0;
@@ -66,30 +45,6 @@ minusQuantityEl.addEventListener("click", () => {
 
 addQuantityEl.addEventListener("click", () => {
   updateCount(count + 1);
-});
-
-// *****************
-// *****************
-// *****************
-
-// Event listener for manual input in the quantity field
-quantityInputEl.addEventListener("input", (event) => {
-  const inputValue = parseInt(event.target.value, 10);
-  if (!isNaN(inputValue) && inputValue >= 0) {
-    updateCount(inputValue);
-  } else {
-    updateCount(0); // Reset to 0 if input is invalid
-  }
-});
-
-// Ensure increment and decrement buttons respect the input value
-quantityInputEl.addEventListener("change", () => {
-  const inputValue = parseInt(quantityInputEl.value, 10);
-  if (!isNaN(inputValue) && inputValue >= 0) {
-    count = inputValue; // Sync the count with the current input value
-  } else {
-    updateCount(0); // Reset to 0 if input is invalid
-  }
 });
 
 // update cart count
@@ -178,64 +133,100 @@ cartButton.addEventListener("click", () => {
   updateCount(0);
 });
 
+// Update cart content
+// cartButton.addEventListener("click", () => {
+//   const quantity = Number(quantityInput.value);
+//   const productName = document.getElementById("product-name").textContent;
+//   const productPrice = Number(
+//     document.getElementById("product-price").textContent
+//   );
+//   const totalPrice = quantity * productPrice;
+
+// Clear existing content
+//   userCartBox.innerHTML = `
+//     <header class="user-cart__header">Cart</header>
+//     <section class="user-cart__holder">
+//  `;
+//   if (quantity >= 1) {
+//     // remove empty text
+//     document.querySelector(".empty-cart").classList.add("hidden");
+//     // Add product details to the cart
+//     userCartBox.innerHTML += `
+//       <div class="user-cart__product--img">
+//         <img src="./images/image-product-1-thumbnail.jpg" alt="${productName}" />
+//       </div>
+//       <div>
+//         <p class="user-cart__product--name">${productName}</p>
+//         <p class="user-cart__product--cost">
+//           $${productPrice} x ${quantity}
+//           <strong class="user-cart__product-total">$${totalPrice.toFixed(
+//             2
+//           )}</strong>
+//         </p>
+//       </div>
+//       <div class="user-cart__product--delete">
+//         <img src="./images/icon-delete.svg" alt="Delete items button" />
+//       </div>
+//       <button class="user-cart__product--checkout">
+//         <a href="#">Checkout</a>
+//       </button>
+//     `;
+//   }
+
+//   // Close the section tag
+//   userCartBox.innerHTML += `</section>`;
+// });
+
+// Increase and reduce quantity
+// minusQuantity.addEventListener("click", () => {
+//   let currentQuantity = Number(quantityInput.value);
+//   if (currentQuantity > 0) {
+//     currentQuantity -= 1;
+//   }
+//   quantityInput.value = currentQuantity;
+// });
+
+// addQuantity.addEventListener("click", () => {
+//   let currentQuantity = Number(quantityInput.value);
+//   quantityInput.value = currentQuantity + 1;
+// });
+
+// ---------------------------------------------
+
 // GALLERY
+const mainImages = document.querySelectorAll(".container__product__img img");
+const thumbnails = document.querySelectorAll(
+  ".container__product__thumbnail .product--thumbnail"
+);
+const lightboxMainImages = document.querySelectorAll(
+  ".lightbox .container__product__img img"
+);
+const lightboxThumbnails = document.querySelectorAll(
+  ".lightbox .container__product__thumbnail .product--thumbnail"
+);
+const lightbox = document.querySelector(".lightbox");
+const lightboxContainer = document.querySelector(".lightbox-container");
+const closeLightBox = document.querySelector(".icon-close");
+const iconPrev = document.querySelector(".icon-prev");
+const iconNext = document.querySelector(".icon-next");
 
 // begin
 
 let currentIndex = 0;
-// const changeImage = (index, mainImages, thumbnails) => {
-//   mainImages.forEach((img) => {
-//     img.classList.remove("active");
-//   });
+const changeImage = (index, mainImages, thumbnails) => {
+  mainImages.forEach((img) => {
+    img.classList.remove("active");
+  });
 
-//   thumbnails.forEach((thumb) => {
-//     thumb.classList.remove("active");
-//   });
+  thumbnails.forEach((thumb) => {
+    thumb.classList.remove("active");
+  });
 
-//   mainImages[index].classList.add("active");
-//   thumbnails[index].classList.add("active");
-
-//   currentIndex = index;
-// };
-
-// ***********
-// ***********
-// ***********
-const changeImage = (index, images, thumbnails) => {
-  // Remove the active class from all images and thumbnails
-  images.forEach((img) => img.classList.remove("active"));
-  thumbnails.forEach((thumb) => thumb.classList.remove("active"));
-
-  // Add the active class to the current index
-  images[index].classList.add("active");
+  mainImages[index].classList.add("active");
   thumbnails[index].classList.add("active");
 
-  // Update the currentIndex
   currentIndex = index;
 };
-
-iconNext.addEventListener("click", () => {
-  // Increment index and loop back if it exceeds the last image
-  const nextIndex = (currentIndex + 1) % mainImages.length;
-  changeImage(nextIndex, mainImages, thumbnails);
-  changeImage(nextIndex, lightboxMainImages, lightboxThumbnails);
-});
-
-iconPrev.addEventListener("click", () => {
-  // Decrement index and loop back if it goes below 0
-  const prevIndex = (currentIndex - 1 + mainImages.length) % mainImages.length;
-  changeImage(prevIndex, mainImages, thumbnails);
-  changeImage(prevIndex, lightboxMainImages, lightboxThumbnails);
-});
-
-// Initialize by setting the first image as active
-changeImage(0, mainImages, thumbnails);
-changeImage(0, lightboxMainImages, lightboxThumbnails);
-
-// **********
-// **********
-// **********
-// **********
 
 thumbnails.forEach((thumb, index) => {
   thumb.addEventListener("click", () => {
@@ -262,29 +253,17 @@ closeLightBox.addEventListener("click", () => {
   lightboxContainer.classList.remove("active");
 });
 
-// iconPrev.addEventListener("click", () => {
-//   if (currentIndex <= 0) {
-//     changeImage(mainImages.length - 1, lightboxMainImages, lightboxThumbnails);
-//   } else {
-//     changeImage(currentIndex - 1, lightboxMainImages, lightboxThumbnails);
-//   }
-// });
-// iconNext.addEventListener("click", () => {
-//   if (currentIndex >= mainImages.length - 1) {
-//     changeImage(0, lightboxMainImages, lightboxThumbnails);
-//   } else {
-//     changeImage(currentIndex + 1, lightboxMainImages, lightboxThumbnails);
-//   }
-// });
-
-// iconNext.addEventListener("click", () => {
-//   // Increment the index, wrapping back to 0 if at the end
-//   const nextIndex = (currentIndex + 1) % lightboxMainImages.length;
-//   changeImage(nextIndex, lightboxMainImages, lightboxThumbnails);
-// });
-// iconPrev.addEventListener("click", () => {
-//   // Decrement the index, wrapping to the last image if at the beginning
-//   const prevIndex =
-//     (currentIndex - 1 + lightboxMainImages.length) % lightboxMainImages.length;
-//   changeImage(prevIndex, lightboxMainImages, lightboxThumbnails);
-// });
+iconPrev.addEventListener("click", () => {
+  if (currentIndex <= 0) {
+    changeImage(mainImages.length - 1, lightboxMainImages, lightboxThumbnails);
+  } else {
+    changeImage(currentIndex - 1, lightboxMainImages, lightboxThumbnails);
+  }
+});
+iconNext.addEventListener("click", () => {
+  if (currentIndex >= mainImages.length - 1) {
+    changeImage(0, lightboxMainImages, lightboxThumbnails);
+  } else {
+    changeImage(currentIndex + 1, lightboxMainImages, lightboxThumbnails);
+  }
+});
